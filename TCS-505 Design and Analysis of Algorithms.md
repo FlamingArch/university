@@ -210,13 +210,13 @@ f(n) = o(g(n)) = f(n) > g(n) for all $n > n_0$ and for all $c > 0$
 | ω        | No        | No        | Yes        |
 | -------- | --------- | --------- | ---------- |
 
-> Reflexive:
+> **Reflexive:**  
 > $ f(n) = O(f(n)) $
 
-> Symmteric:  
+> **Symmteric:**  
 > $ f(n) = O(g(n)) $  
 > $ g(n) = O(g(n)) $  
 > $ \_aR_b \longrightarrow \_bR_c $
 
-> Transitive:
+> **Transitive:**  
 > $ \_aR_b \& \_bR_c \longrightarrow \_aR_c $
