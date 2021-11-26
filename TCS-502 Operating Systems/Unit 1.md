@@ -643,3 +643,160 @@ As process executes, it changes state:
 <path d="M149.646 120.354C149.842 120.549 150.158 120.549 150.354 120.354L153.536 117.172C153.731 116.976 153.731 116.66 153.536 116.464C153.34 116.269 153.024 116.269 152.828 116.464L150 119.293L147.172 116.464C146.976 116.269 146.66 116.269 146.464 116.464C146.269 116.66 146.269 116.976 146.464 117.172L149.646 120.354ZM150.354 59.6464C150.158 59.4512 149.842 59.4512 149.646 59.6464L146.464 62.8284C146.269 63.0237 146.269 63.3403 146.464 63.5355C146.66 63.7308 146.976 63.7308 147.172 63.5355L150 60.7071L152.828 63.5355C153.024 63.7308 153.34 63.7308 153.536 63.5355C153.731 63.3403 153.731 63.0237 153.536 62.8284L150.354 59.6464ZM150.5 120L150.5 60L149.5 60L149.5 120L150.5 120Z" fill="#0088FF"/>
 <path d="M240.5 210C240.5 209.724 240.276 209.5 240 209.5H235.5C235.224 209.5 235 209.724 235 210C235 210.276 235.224 210.5 235.5 210.5H239.5V214.5C239.5 214.776 239.724 215 240 215C240.276 215 240.5 214.776 240.5 214.5V210ZM179.5 270C179.5 270.276 179.724 270.5 180 270.5H184.5C184.776 270.5 185 270.276 185 270C185 269.724 184.776 269.5 184.5 269.5H180.5V265.5C180.5 265.224 180.276 265 180 265C179.724 265 179.5 265.224 179.5 265.5V270ZM239.646 209.646L179.646 269.646L180.354 270.354L240.354 210.354L239.646 209.646Z" fill="#0088FF"/>
 </svg>
+
+<hr/>
+
+**LECTURE 11: 7 Scheduler and Dispatcher**
+
+# Scheduler
+
+A scheduler is a primary program that lives in memory and tries to schedule other processes.
+
+# Dispatcher
+
+A dispatcher is a primary program that sends program from one state to another as scheduled by the scheduling algorithm.
+
+# Types of Schedulars
+
+1. Long Term Schedular
+2. Mid Term Schedular
+3. Short Term Schedular
+
+# Types of Dispatchers
+
+1. Long Term Dispatcher
+2. Mid Term Dispatcher
+3. Short Term Dispatcher
+
+<hr/>
+
+**LECTURE 12: LTS**
+
+# Long Term Schedular
+
+Scheduling of $n$ processes from `new` state to `ready` state based on some scheduling algorithm is done by the long term scheduler.
+
+# Long Term Dispatcher
+
+Dispatching of $n$ processes from `new` state to `ready` state scheduled by the long term schedular is done by the long term dispatcher.
+
+<hr/>
+
+**LECTURE 13: STS**
+
+# Short Term Schedular
+
+Scheduling of $n$ processes from `ready` state to `running` state based on some scheduling algorithm is done by the short term scheduler. It is also called **CPU Schedular**.
+
+# Short Term Dispatcher
+
+Dispatching of $n$ processes from `ready` state to `running` state scheduled by the short term schedular is done by the short term dispatcher. It is also called **CPU Dispatcher**.
+
+<hr/>
+
+**LECTURE 14: MTS**
+
+# Mid Term Schedular
+
+Scheduling of $n$ processes from `wait` state to `suspended` or `ready` state to `ready suspended` and back, or out from Memory into Hard Drive and back from Hard Drive into memory is done by the mid term scheduler.
+
+# Mid Term Dispatcher
+
+Dispatching of $n$ processes from `wait` state to `suspended` or `ready` state to `ready suspended` and back, or out from Memory into Hard Drive and back from Hard Drive into memory as scheduled by the mid term schedular is done by the mid term dispatcher.
+
+<hr/>
+
+**LECTURE 15: Schedular Final**
+
+# QUESTIONS: Schedular and Dispatcher
+
+**QUES 1: Which schedular is most frequently invoked?**  
+ANS 1: STS, as it schedules process to move from `ready` to `running` states, from Memory to CPU
+
+**QUES 2: Which schedular controls the degree of multiprogramming?**  
+ANS 2: Degree of multiprogramming is defined by the number of processes in the RAM. It is controlled by the LTS.
+
+<hr/>
+
+**LECTURE 16, 17: CPU Scheduling Criteria 1, 2**
+
+# Scheduling and Performance Criteria
+
+1. **Processor Utilization:** How much a process is utilizing the CPU.
+2. **Throughput:** For unit time, how much work is complete.
+3. **Turnaround Time (TAT):** Time taken by process to complete its execution. It is sum of **Burst Time** (time taken for execution in CPU, executing) and **Waiting Time** (time taken outside CPU, not executing).
+4. **Waiting Time (WT):** Time waited by process to get into CPU for execution.
+5. **Response Time:** It is a subset of Waiting Time, and is the time the process has waited before being to the CPU for execution for the first time.
+
+<hr/>
+
+**LECTURE 18: FCFS**
+
+# Algorithms of CPU Scheduling
+
+1. FCFS (First Come First Serve)
+2. SJF (Shortest Job First)
+3. Priority Scheduling
+4. Round Robin
+
+## FCFS (First Come First Serve)
+
+The processes are queued to be executed on a first come, first serve basis.
+
+**Gantt Chart:**
+
+| P1  | P2  | P3  |
+| --- | --- | --- |
+| 10s | 5s  | 5s  |
+
+> **Waiting Time in FCFS** = End Time - Arrival Time
+
+<hr/>
+
+**LECTURE 19: SJF**
+
+## SJF (Shortest Job First)
+
+Processes are queued in the ascending order of execution time.
+
+There are two types of SJF:
+
+1. Non-Preemptive: Jobs are scheduled according to execution time
+2. Preemptive: Jobs are scheduled according to _remaining_ execution time
+
+<hr/>
+
+**LECTURE 30: Priority Scheduling**
+
+# Priority Scheduling
+
+Processes are queued according to a priority assigned to the process by the system. Processes with same priority are prioritised according to arrival time.
+
+<hr/>
+
+**LECTURE 20, 21: Round Robin 1, 2**
+
+# Round Robin
+
+It is a Pure-Preemptive algorithm.  
+Round Robin is a pure preemptive algorithm. The process will be given a fixed amount of time to be executed in the CPU, called the **Time Quantum (TQ)**.
+
+# Multiple Level Queue (MLQ) Scheduling
+
+Multiple Level Queue is a combination of Multiple Algorithms.
+
+It specifies different scheduling algorithms for processes behaving differently:
+
+> **System Process:** Priority Scheduling
+>
+> **Interavtive Process:** Round Robin
+>
+> **Batch Process:** FCFS
+
+# Multiple Level Feedback Queue (MLFQ) Scheduling
+
+Multiple Level Queue is a combination of Multiple Algorithms with a feedback system.
+
+There is a prossibility that a process may change its behaviour.
+
+MLFQ contains a feedback with which one process can be moved and scheduled in different types of queues.
