@@ -432,3 +432,107 @@ These types of algorithms are used for exhaustive searching of solution.
 ## Arranging from best to worse:
 
 $ O(1) < O(\log{n}) < O(n) < O(n^k) < O(k^n) $
+
+# Lecture 10 - Types of Complexities
+
+## Summation Method
+
+**Example 1:**
+
+```c++
+for (int i = 1; i < n; i++) {
+  // O(1)
+}
+```
+
+Time Complexity:  
+$\sum_{i=1}^{n} 1$  
+$= 1 + 1 + 1 + ... (n times)$  
+$= O(n)$
+
+**Example 2:**
+
+```c++
+for (int i = 1; i < n; i+=2) {
+  // O(1)
+}
+```
+
+Time Complexity:  
+$\sum_{i=1}^{n} 1$  
+$= 1 + 1 + 1 + ... (\frac{(n+1)}{2} times)$  
+$= O(\frac{(n+1)}{2})$
+
+**Example 3:**
+
+```c++
+for (int i = 1; i < n; i++) {
+  // O(n)
+}
+```
+
+Time Complexity:  
+$\sum_{i=1}^{n} 1$  
+$= n + n + n + ... (n times)$  
+$= O(n^2)$
+
+**Example 4:**
+
+```c++
+for (int i = 1; i < n; i++) {
+  for (int j = i + 1; j < n; j++) {
+    // O(1)
+  }
+}
+```
+
+Time Complexity:  
+$\sum_{i=1}^{n} (\sum_{j=i+1}^{n} 1)$
+
+Number of Times = Lower Limit - Upper Limit + 1 $= l - u + 1$  
+$= (n - (i+1) + 1)$ times  
+$= n - i$ times  
+$\sum_{j=1}^{n} 1 = 1 + 1 + 1 + ... (n-i)$ times
+
+$\big(\sum_{i=1}^{n} n - \sum_{i=1}^{n} i\big)$  
+$= n^2 - (1 + 2 + 3 + ... n)$  
+$= n^2 - \big(\frac{n*(n+1)}{2}\big)$  
+$= \frac{2n^2-n^2-n}{2}$
+
+# Lecture 12 - Recurrence Relation
+
+A recurrance relation is used to determine the relation between between the time complexity of problem and time complexity of subproblem's solution.
+
+```c++
+bool binarySearch(int *arr, int l, int r, int key) {
+  if (l > r) return false;
+   int mid = (l + r) / 2; // 1
+
+   if (arr[mid] == key) return true;
+
+   else if (arr[mid] < key) return binarySearch(arr, mid + 1, r, key);
+
+   else return binarySearch(arr, l, mid - 1, key);
+}
+```
+
+In 1, Since $\frac{l+r}{2}$ might overflow, we instead use $l + \frac{r-l}{2}$
+
+**Time Complexity:**
+We first calculate the number of fundamental operations. Since it is a recursive problem, it is not straight foreward. We instead use recurrence relation.
+
+Time complexity of finding key in:
+
+| Run     | Complexity |
+| ------- | ---------- |
+| 1st run | $O(n)$     |
+| 2nd run | $O(n/2)$   |
+| 2rd run | $O(n/4)$   |
+
+Recurrence Relation:  
+$T(n) = T(n/2) + 1$  
+$T(1) = 1$
+
+# Lecture 13 - Solving Recurrence Relation
+
+**Forward Substitution**
