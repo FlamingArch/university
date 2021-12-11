@@ -1,3 +1,6 @@
+!.vscode
+
+.vscode/*
+!.vscode/tasks.json
 
 .DS_Store
-.vscode
