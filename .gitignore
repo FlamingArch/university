@@ -4,3 +4,5 @@
 !.vscode/tasks.json
 
 .DS_Store
+a.out
+lex.yy.c
