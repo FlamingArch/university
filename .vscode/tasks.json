@@ -4,7 +4,12 @@
       "label": "Run C Program",
       "command": "clang '${fileDirname}/${fileBasename}' -o vscode_c_program && clear && ./vscode_c_program && rm vscode_c_program",
       "type": "shell"
-    }
+    },
+    {
+      "label": "Run Lex Program",
+      "command": "lex '${fileDirname}/${fileBasename}' && clang '${fileDirname}/lex.yy.c' -o vscode_c_program && clear && ./vscode_c_program && rm vscode_c_program",
+      "type": "shell"
+    },
   ],
   "version": "2.0.0"
 }
