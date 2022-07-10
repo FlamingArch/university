@@ -1,0 +1,1 @@
+for n in range(0,int(input("Enter Limit: > ")),2): print(n) 
