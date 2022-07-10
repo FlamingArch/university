@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function that takes a string and returns The position in the string of the left-most vowel
+      function leftMostVowel(str) {
+        let vowels = "aeiou";
+        let vowelPos = [];
+        for (let i = 0; i < str.length; i++) {
+          if (vowels.includes(str[i])) {
+            vowelPos.push(i);
+          }
+        }
+        return vowelPos[0];
+      }
+
+      // Function that takes number and returns The number with its digits in the reverse order.
+      function reverseNumber(num) {
+        let numStr = num.toString();
+        let numArr = numStr.split("");
+        numArr.reverse();
+        return parseInt(numArr.join(""));
+      }
+
+      console.log(leftMostVowel("Hello World"));
+      console.log(reverseNumber(123456789));
+    </script>
+  </body>
+</html>

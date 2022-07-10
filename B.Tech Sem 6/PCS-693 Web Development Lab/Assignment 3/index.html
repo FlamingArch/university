@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      body {
+        background: cyan;
+      }
+      h3 {
+        text-align: center;
+      }
+      form .grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/" method="post">
+      <h3>Student Registration From</h3>
+      <div class="grid">
+        <label for="name">Name</label>
+        <input type="text" name="name" />
+        <label for="name">Father Name</label>
+        <input type="text" name="father_name" />
+        <label for="address">Postal Address</label>
+        <input type="text" name="address" />
+        <label for="personal_address">Personal Address</label>
+        <input type="text" name="personal_address" />
+        <label for="sex">Sex</label>
+        <div>
+          <input type="radio" name="male" />Male
+          <input type="radio" name="female" />Female
+        </div>
+        <label for="city">City</label>
+        <input list="city" />
+        <datalist id="city">
+          <option value="select..."></option>
+        </datalist>
+        <label for="course">Course</label>
+        <input list="course" />
+        <datalist id="course">
+          <option value="select..."></option>
+        </datalist>
+        <label for="district">District</label>
+        <input list="district" />
+        <datalist id="district">
+          <option value="select..."></option>
+        </datalist>
+        <label for="state">State</label>
+        <input list="state" />
+        <datalist id="state">
+          <option value="select..."></option>
+        </datalist>
+        <label for="pincode">PinCode</label>
+        <input type="text" name="pincode" />
+        <label for="email">EmailID</label>
+        <input type="email" name="email" />
+        <label for="dob">DOB</label>
+        <input type="date" name="dob" />
+        <label for="phone">MobileNo</label>
+        <input type="number" name="phone" />
+      </div>
+      <input type="reset" value="Reset" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function countAlphabet(str) {
+        let alphabet = "abcdefghijklmnopqrstuvwxyz";
+        let count = 0;
+        for (let i = 0; i < alphabet.length; i++) {
+          for (let j = 0; j < str.length; j++) {
+            if (alphabet[i] === str[j]) {
+              count++;
+            }
+          }
+        }
+        return count;
+      }
+
+      console.log(
+        countAlphabet(
+          "13456 The quick brown fox jumps over the lazy dog 923.ds"
+        )
+      );
+    </script>
+  </body>
+</html>

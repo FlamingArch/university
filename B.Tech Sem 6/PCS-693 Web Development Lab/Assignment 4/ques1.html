@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ques 1</title>
+  </head>
+  <body>
+    <script>
+      let str = "I'm a little tea pot".split(" ");
+      str = str
+        .map(function (word) {
+          return word[0].toUpperCase() + word.slice(1);
+        })
+        .join(" ");
+
+      console.log(str);
+    </script>
+  </body>
+</html>

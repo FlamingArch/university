@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./res/bg.jpg");
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: cover;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  place-content: center;
+  align-items: center;
+  padding: 2rem;
+  backdrop-filter: blur(4rem);
+  --webkit-backdrop-filter: blur(4rem);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.6rem;
+  box-shadow: 0px 16px 100px rgba(0, 0, 0, 1);
+  animation: transition-in 0.3s ease-out;
+}
+
+input {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid gainsboro;
+  padding: 0.4rem;
+  margin: 0.4rem;
+  border-radius: 6px;
+  transition: background 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+
+input:focus {
+  background-color: white;
+  border: 1px solid transparent;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.16);
+  outline: none;
+}
+
+input:hover {
+  background-color: white;
+}
+
+input[type="submit"] {
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  transition: background 0.1s ease-in, box-shadow 0.1s ease-in,
+    transform 0.1s ease-in;
+  grid-column: 1 / span 2;
+  margin-top: 2rem;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(22, 115, 208);
+  border: none;
+  color: white;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.16);
+  transform: scale(1.05);
+}
+
+input[type="reset"] {
+  background-color: white;
+  border: none;
+  color: black;
+  transition: background 0.1s ease-in, box-shadow 0.1s ease-in,
+    transform 0.1s ease-in;
+  grid-column: 1 / span 2;
+}
+
+input[type="reset"]:hover {
+  background-color: rgb(242, 241, 241);
+  border: none;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.16);
+  transform: scale(1.05);
+}
+
+h1 {
+  grid-column: 1 / span 2;
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem;
+  font-weight: 200;
+}
+
+label {
+  padding: 0.4rem;
+}
+
+@keyframes transition-in {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+    filter: blur(20px);
+    --webkit-filter: blur(20px);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+    --webkit-filter: blur(0px);
+  }
+}
