@@ -1,0 +1,2 @@
+In case of x = b / a, b / a will evaluate to a decimal literal, loosing the decimal part, and then will be assigned to float, which will result in 1 assigned to float as 1.000000.
+In case of x = (float) b / a, b / a will evaluate to a float literal, keeping the decimal part, and then will be assigned to float, which will result in 1.25 assigned to float as 1.250000.
